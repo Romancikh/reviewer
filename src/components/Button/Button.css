@@ -1,0 +1,13 @@
+.button {
+  font: 400 normal 14px / normal Inter, sans-serif;
+  letter-spacing: 0.21px;
+  color: #ffffff;
+  background: #1e65b7;
+  border-radius: 5px;
+  border: 1px solid #dcdcdc;
+  width: fit-content;
+}
+
+.button:hover {
+  background: #0b51a3;
+}

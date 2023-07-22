@@ -1,0 +1,19 @@
+.reply-form__textarea {
+  font: 400 normal 14px / normal Inter, sans-serif;
+  letter-spacing: 0.21px;
+  color: #404040;
+  background: #ffffff;
+  border-radius: 5px;
+  border: 1px solid #dcdcdc;
+  box-sizing: border-box;
+  min-width: 383px;
+  min-height: 113px;
+  padding: 11px 15px 10px;
+  margin-top: 50px;
+  margin-left: 9px;
+  resize: none;
+}
+
+.reply-form__textarea::placeholder {
+  color: #909090;
+}
