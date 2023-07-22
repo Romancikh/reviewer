@@ -1,14 +1,14 @@
 import "./Button.css";
 
 type ButtonProps = {
-  type: "button" | "reset" | "submit";
   className: string;
+  onClick: () => void;
   children: React.ReactNode;
 };
 
-function Button({ type, className, children }: ButtonProps) {
+function Button({ className, onClick, children }: ButtonProps) {
   return (
-    <button type={type} className={`button ${className}`}>
+    <button className={`button ${className}`} onClick={onClick}>
       {children}
     </button>
   );

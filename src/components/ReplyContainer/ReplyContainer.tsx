@@ -6,7 +6,7 @@ type ReplyContainerProps = {
 };
 
 function ReplyContainer({ replies }: ReplyContainerProps) {
-  return (
+  return replies.length ? (
     <div className="reply-container">
       {replies.map((reply) => (
         <Reply
@@ -18,6 +18,8 @@ function ReplyContainer({ replies }: ReplyContainerProps) {
         />
       ))}
     </div>
+  ) : (
+    <h1 className="reply-container reply-container_empty">No replies yet</h1>
   );
 }
 
