@@ -2,11 +2,11 @@ import { v4 as uuid } from "uuid";
 import { useState } from "react";
 import "./App.css";
 import ReviewContainer from "./components/ReviewContainer/ReviewContainer";
-import { ReviewProps } from "./components/Review/Review";
 import ReviewForm from "./components/ReviewForm/ReviewForm";
+import { TReview } from "./types/TReview";
 
 function App() {
-  const [reviews, setReviews] = useState<ReviewProps[]>([]);
+  const [reviews, setReviews] = useState<TReview[]>([]);
 
   const handleReview = (rating: number, text: string) => {
     setReviews([

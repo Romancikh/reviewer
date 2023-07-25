@@ -1,7 +1,6 @@
 import "./Review.css";
 
-export type ReviewProps = {
-  key: string;
+type ReviewProps = {
   photo: string;
   name: string;
   text: string;
