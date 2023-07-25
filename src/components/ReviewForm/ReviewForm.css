@@ -1,11 +1,11 @@
-.reply-form {
+.review-form {
   width: 504px;
   display: flex;
   flex-direction: column;
   gap: 37px;
 }
 
-.reply-form__title {
+.review-form__title {
   font: 500 normal 26px / normal Inter, sans-serif;
   letter-spacing: 0.39px;
   color: #404040;
@@ -13,31 +13,31 @@
   margin-left: 9px;
 }
 
-.reply-form__content {
+.review-form__content {
   margin: 0;
   display: flex;
   justify-content: space-between;
 }
 
-.reply-form__fields {
+.review-form__fields {
   display: flex;
   flex-direction: column;
 }
 
-.reply-form__parameters {
+.review-form__parameters {
   padding-top: 15px;
   display: flex;
   flex-direction: column;
   gap: 44px;
 }
 
-.reply-form__button {
+.review-form__button {
   align-self: flex-end;
   padding: 8px 40px 7px;
   margin-top: 27px;
 }
 
-.reply-form__rating {
+.review-form__rating {
   font: 400 normal 44px / normal Inter, sans-serif;
   letter-spacing: 0.66px;
   color: #404040;

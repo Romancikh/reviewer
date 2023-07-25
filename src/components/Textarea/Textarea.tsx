@@ -15,7 +15,7 @@ function Textarea({ id, value, placeholder, onChange }: TextareaProps) {
       id={id}
       value={value}
       placeholder={placeholder}
-      className="reply-form__textarea"
+      className="review-form__textarea"
       onChange={onChange}
     />
   );

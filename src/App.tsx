@@ -1,16 +1,16 @@
 import { v4 as uuid } from "uuid";
 import { useState } from "react";
 import "./App.css";
-import ReplyContainer from "./components/ReplyContainer/ReplyContainer";
-import { ReplyProps } from "./components/Reply/Reply";
-import ReplyForm from "./components/ReplyForm/ReplyForm";
+import ReviewContainer from "./components/ReviewContainer/ReviewContainer";
+import { ReviewProps } from "./components/Review/Review";
+import ReviewForm from "./components/ReviewForm/ReviewForm";
 
 function App() {
-  const [replies, setReplies] = useState<ReplyProps[]>([]);
+  const [reviews, setReviews] = useState<ReviewProps[]>([]);
 
-  const handleReply = (rating: number, text: string) => {
-    setReplies([
-      ...replies,
+  const handleReview = (rating: number, text: string) => {
+    setReviews([
+      ...reviews,
       {
         key: uuid(),
         name: "John Doe",
@@ -23,9 +23,9 @@ function App() {
 
   return (
     <>
-      <ReplyForm onReply={handleReply} />
+      <ReviewForm onReview={handleReview} />
       <div className="divisor" />
-      <ReplyContainer replies={replies} />
+      <ReviewContainer reviews={reviews} />
     </>
   );
 }

@@ -2,14 +2,13 @@ import { ChangeEvent, useMemo, useState } from "react";
 import Button from "../Button/Button";
 import Parameter from "../Parameter/Parameter";
 import Textarea from "../Textarea/Textarea";
-import "./ReplyForm.css";
+import "./ReviewForm.css";
 
-type ReplyFormProps = {
-  onReply: (rating: number, text: string) => void;
+type ReviewFormProps = {
+  onReview: (rating: number, text: string) => void;
 };
-4;
 
-function ReplyForm({ onReply }: ReplyFormProps) {
+function ReviewForm({ onReview }: ReviewFormProps) {
   const initialRatingParameters = {
     cleanliness: {
       id: "cleanliness",
@@ -66,16 +65,16 @@ function ReplyForm({ onReply }: ReplyFormProps) {
   };
 
   const handleClick = () => {
-    onReply(rating, text);
+    onReview(rating, text);
     resetForm();
   };
 
   return (
-    <div className="reply-form">
-      <h1 className="reply-form__title">How nice was my reply?</h1>
-      <div className="reply-form__content">
-        <div className="reply-form__fields">
-          <div className="reply-form__parameters">
+    <div className="review-form">
+      <h1 className="review-form__title">How nice was my reply?</h1>
+      <div className="review-form__content">
+        <div className="review-form__fields">
+          <div className="review-form__parameters">
             {Object.keys(ratingParameters).map((id) => (
               <Parameter
                 key={id}
@@ -94,14 +93,14 @@ function ReplyForm({ onReply }: ReplyFormProps) {
               setText(event.target.value);
             }}
           />
-          <Button className="reply-form__button" onClick={handleClick}>
+          <Button className="review-form__button" onClick={handleClick}>
             Send
           </Button>
         </div>
-        <span className="reply-form__rating">{rating}/5</span>
+        <span className="review-form__rating">{rating}/5</span>
       </div>
     </div>
   );
 }
 
-export default ReplyForm;
+export default ReviewForm;

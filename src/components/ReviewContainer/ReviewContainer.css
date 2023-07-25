@@ -1,11 +1,11 @@
-.reply-container {
+.review-container {
   display: flex;
   flex-direction: column;
   gap: 40px;
   margin-top: 40px;
 }
 
-.reply-container_empty {
+.review-container_empty {
   font: 500 normal 26px / normal Inter, sans-serif;
   letter-spacing: 0.39px;
   color: #404040;

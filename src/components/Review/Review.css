@@ -1,14 +1,14 @@
-.reply {
+.review {
   display: flex;
 }
 
-.reply__photo {
+.review__photo {
   width: 50px;
   height: 50px;
   border-radius: 50%;
 }
 
-.reply__content {
+.review__content {
   margin-left: 18px;
   margin-top: 16px;
   display: flex;
@@ -16,14 +16,14 @@
   gap: 10px;
 }
 
-.reply__name {
+.review__name {
   margin: 0;
   font: 500 normal 16px / normal Inter, sans-serif;
   letter-spacing: 0.24px;
   color: #404040;
 }
 
-.reply__text {
+.review__text {
   margin: 0;
   font: 400 normal 14px / normal Inter, sans-serif;
   letter-spacing: 0.21px;
@@ -31,7 +31,7 @@
   width: 451px;
 }
 
-.reply__rating {
+.review__rating {
   font: 500 normal 24px / normal Inter, sans-serif;
   letter-spacing: 0.36px;
   color: #404040;

@@ -2,6 +2,6 @@
 
 ## Разбиение пользовательского интерфейса на иерархию компонентов
 
-![reply-form](https://github.com/Romancikh/reviewer/blob/main/images/reply-form.png?raw=true)
+![review-form](https://github.com/Romancikh/reviewer/blob/main/images/review-form.png?raw=true)
 
-![replies-container](https://github.com/Romancikh/reviewer/blob/main/images/replies-container.png)
+![reviews-container](https://github.com/Romancikh/reviewer/blob/main/images/reviews-container.png)
