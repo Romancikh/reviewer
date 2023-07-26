@@ -11,7 +11,7 @@ function ReviewContainer({ reviews }: ReviewContainerProps) {
     <div className="review-container">
       {reviews.map((review) => (
         <Review
-          key={review.key}
+          key={review.id}
           photo={review.photo}
           name={review.name}
           text={review.text}

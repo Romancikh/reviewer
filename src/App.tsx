@@ -12,7 +12,7 @@ function App() {
     setReviews([
       ...reviews,
       {
-        key: uuid(),
+        id: uuid(),
         name: "John Doe",
         photo: `https://lipsum.app/random/50x50?=${uuid()}`,
         text,
