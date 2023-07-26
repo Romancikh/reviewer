@@ -1,15 +1,14 @@
 import { ChangeEvent, useMemo, useState } from "react";
-import Button from "../Button/Button";
-import Parameter from "../Parameter/Parameter";
-import Textarea from "../Textarea/Textarea";
 import "./ReviewForm.css";
+import ReviewFormContent from "../ReviewFormContent/ReviewFormContent";
+import { RatingParameters } from "../../types/RatingParameter";
 
 type ReviewFormProps = {
   onReview: (rating: number, text: string) => void;
 };
 
 function ReviewForm({ onReview }: ReviewFormProps) {
-  const initialRatingParameters = {
+  const initialRatingParameters: RatingParameters = {
     cleanliness: {
       id: "cleanliness",
       label: "Cleanliness",
@@ -37,9 +36,9 @@ function ReviewForm({ onReview }: ReviewFormProps) {
     },
   };
 
-  const [ratingParameters, setRatingParameters] = useState<{
-    [id: string]: { id: string; label: string; value: number };
-  }>(initialRatingParameters);
+  const [ratingParameters, setRatingParameters] = useState<RatingParameters>(
+    initialRatingParameters
+  );
   const [text, setText] = useState("");
 
   const resetForm = () => {
@@ -72,33 +71,16 @@ function ReviewForm({ onReview }: ReviewFormProps) {
   return (
     <div className="review-form">
       <h1 className="review-form__title">How nice was my reply?</h1>
-      <div className="review-form__content">
-        <div className="review-form__fields">
-          <div className="review-form__parameters">
-            {Object.keys(ratingParameters).map((id) => (
-              <Parameter
-                key={id}
-                id={ratingParameters[id].id}
-                label={ratingParameters[id].label}
-                value={ratingParameters[id].value}
-                onChange={handleChange}
-              />
-            ))}
-          </div>
-          <Textarea
-            id="text"
-            value={text}
-            placeholder="What could we improve?"
-            onChange={(event) => {
-              setText(event.target.value);
-            }}
-          />
-          <Button className="review-form__button" onClick={handleClick}>
-            Send
-          </Button>
-        </div>
-        <span className="review-form__rating">{rating}/5</span>
-      </div>
+      <ReviewFormContent
+        ratingParameters={ratingParameters}
+        onChange={handleChange}
+        text={text}
+        onTextChange={(event) => {
+          setText(event.target.value);
+        }}
+        onClick={handleClick}
+        rating={rating}
+      />
     </div>
   );
 }
