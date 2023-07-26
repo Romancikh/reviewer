@@ -3,10 +3,10 @@ import { useState } from "react";
 import "./App.css";
 import ReviewContainer from "./components/ReviewContainer/ReviewContainer";
 import ReviewForm from "./components/ReviewForm/ReviewForm";
-import { TReview } from "./types/TReview";
+import { Review } from "./types/Review";
 
 function App() {
-  const [reviews, setReviews] = useState<TReview[]>([]);
+  const [reviews, setReviews] = useState<Review[]>([]);
 
   const handleReview = (rating: number, text: string) => {
     setReviews([

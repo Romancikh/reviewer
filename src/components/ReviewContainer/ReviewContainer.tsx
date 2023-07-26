@@ -1,8 +1,9 @@
 import "./ReviewContainer.css";
-import Review, { ReviewProps } from "../Review/Review";
+import { Review as TReview } from "../../types/Review";
+import Review from "../Review/Review";
 
 type ReviewContainerProps = {
-  reviews: ReviewProps[];
+  reviews: TReview[];
 };
 
 function ReviewContainer({ reviews }: ReviewContainerProps) {
