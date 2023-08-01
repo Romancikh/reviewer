@@ -1,8 +1,6 @@
 import { ChangeEvent, ChangeEventHandler } from "react";
 import { RatingParameters } from "../../types/RatingParameter";
-import Button from "../Button/Button";
 import ReviewFormParameters from "../ReviewFormParameters/ReviewFormParameters";
-import Textarea from "../Textarea/Textarea";
 import "./ReviewFormFields.css";
 
 type ReviewFormFieldsProps = {
@@ -26,15 +24,17 @@ function ReviewFormFields({
         ratingParameters={ratingParameters}
         onChange={onChange}
       />
-      <Textarea
+      <textarea
+        name="text"
         id="text"
         value={text}
         placeholder="What could we improve?"
+        className="textarea review-form__textarea"
         onChange={onTextChange}
       />
-      <Button className="review-form__button" onClick={onClick}>
+      <button className="button review-form__button" onClick={onClick}>
         Send
-      </Button>
+      </button>
     </div>
   );
 }

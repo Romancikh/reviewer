@@ -1,7 +1,7 @@
 import { ChangeEvent, useMemo, useState } from "react";
 import "./ReviewForm.css";
-import ReviewFormContent from "../ReviewFormContent/ReviewFormContent";
 import { RatingParameters } from "../../types/RatingParameter";
+import ReviewFormFields from "../ReviewFormFields/ReviewFormFields";
 
 type ReviewFormProps = {
   onReview: (rating: number, text: string) => void;
@@ -71,16 +71,18 @@ function ReviewForm({ onReview }: ReviewFormProps) {
   return (
     <div className="review-form">
       <h1 className="review-form__title">How nice was my reply?</h1>
-      <ReviewFormContent
-        ratingParameters={ratingParameters}
-        onChange={handleChange}
-        text={text}
-        onTextChange={(event) => {
-          setText(event.target.value);
-        }}
-        onClick={handleClick}
-        rating={rating}
-      />
+      <div className="review-form__content">
+        <ReviewFormFields
+          ratingParameters={ratingParameters}
+          onChange={handleChange}
+          text={text}
+          onTextChange={(event) => {
+            setText(event.target.value);
+          }}
+          onClick={handleClick}
+        />
+        <span className="review-form__rating">{rating}/5</span>
+      </div>
     </div>
   );
 }

@@ -1,4 +1,3 @@
-import ReviewContent from "../ReviewContent/ReviewContent";
 import "./Review.css";
 
 type ReviewProps = {
@@ -12,7 +11,10 @@ function Review({ photo, name, text, rating }: ReviewProps) {
   return (
     <div className="review">
       <img src={photo} alt="user" className="review__photo" />
-      <ReviewContent name={name} text={text} />
+      <div className="review__content">
+        <span className="review__name">{name}</span>
+        <p className="review__text">{text}</p>
+      </div>
       <div className="review__rating">{rating}/5</div>
     </div>
   );
