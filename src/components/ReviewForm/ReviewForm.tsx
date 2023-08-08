@@ -1,7 +1,8 @@
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
 import { useMemo, useState } from "react";
 import { RatingParameters } from "../../types/RatingParameter";
 import ReviewFormFields from "../ReviewFormFields/ReviewFormFields";
-import "./ReviewForm.css";
 
 type ReviewFormProps = {
   onReview: (rating: number, text: string) => void;
@@ -77,9 +78,11 @@ function ReviewForm({ onReview }: ReviewFormProps) {
   };
 
   return (
-    <div className="review-form">
-      <h1 className="review-form__title">How nice was my reply?</h1>
-      <div className="review-form__content">
+    <Box width={504} display="flex" flexDirection="column" gap={5}>
+      <Typography variant="h4" component="h1" color="#404040">
+        How nice was my reply?
+      </Typography>
+      <Box display="flex" justifyContent="space-between">
         <ReviewFormFields
           ratingParameters={ratingParameters}
           onChange={handleChange}
@@ -89,9 +92,11 @@ function ReviewForm({ onReview }: ReviewFormProps) {
           }}
           onClick={handleClick}
         />
-        <span className="review-form__rating">{rating}/5</span>
-      </div>
-    </div>
+        <Typography variant="h3" color="#404040">
+          {rating}/5
+        </Typography>
+      </Box>
+    </Box>
   );
 }
 
