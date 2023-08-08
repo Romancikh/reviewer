@@ -1,6 +1,6 @@
+import Stack from "@mui/material/Stack";
 import { RatingParameters } from "../../types/RatingParameter";
 import Parameter from "../Parameter/Parameter";
-import "./ReviewFormParameters.css";
 
 type ReviewFormParametersProps = {
   ratingParameters: RatingParameters;
@@ -16,7 +16,7 @@ function ReviewFormParameters({
   onChange,
 }: ReviewFormParametersProps) {
   return (
-    <div className="review-form__parameters">
+    <Stack gap={4}>
       {Object.keys(ratingParameters).map((id) => (
         <Parameter
           key={id}
@@ -26,7 +26,7 @@ function ReviewFormParameters({
           onChange={onChange}
         />
       ))}
-    </div>
+    </Stack>
   );
 }
 
