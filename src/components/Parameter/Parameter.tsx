@@ -1,31 +1,37 @@
-import { ChangeEventHandler } from "react";
-import "./Parameter.css";
+import Box from "@mui/material/Box";
+import Slider from "@mui/material/Slider";
+import Typography from "@mui/material/Typography";
 
 type ParameterProps = {
-  id: string;
+  name: string;
   label: string;
   value: number;
-  onChange: ChangeEventHandler<HTMLInputElement>;
+  onChange: (
+    event: Event,
+    value: number | number[],
+    activeThumb: number
+  ) => void;
 };
 
-function Parameter({ id, label, value, onChange }: ParameterProps) {
+function Parameter({ name, label, value, onChange }: ParameterProps) {
   return (
-    <div className="parameter">
-      <input
-        type="range"
-        name={id}
-        id={id}
+    <Box display="flex" gap={2} alignItems="center">
+      <Slider
+        name={name}
+        marks
+        valueLabelDisplay="auto"
         min={1}
         max={5}
-        step={1}
         value={value}
-        className="parameter__range"
         onChange={onChange}
+        sx={{
+          width: "206px",
+        }}
       />
-      <label htmlFor={id} className="parameter__label">
+      <Typography color="#404040" fontSize={20}>
         {label}
-      </label>
-    </div>
+      </Typography>
+    </Box>
   );
 }
 

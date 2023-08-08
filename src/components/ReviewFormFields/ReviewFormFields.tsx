@@ -1,11 +1,15 @@
-import { ChangeEvent, ChangeEventHandler } from "react";
+import { ChangeEvent } from "react";
 import { RatingParameters } from "../../types/RatingParameter";
 import ReviewFormParameters from "../ReviewFormParameters/ReviewFormParameters";
 import "./ReviewFormFields.css";
 
 type ReviewFormFieldsProps = {
   ratingParameters: RatingParameters;
-  onChange: ChangeEventHandler<HTMLInputElement>;
+  onChange: (
+    event: Event,
+    value: number | number[],
+    activeThumb: number
+  ) => void;
   text: string;
   onTextChange: (event: ChangeEvent<HTMLTextAreaElement>) => void;
   onClick: () => void;

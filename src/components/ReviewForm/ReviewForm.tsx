@@ -1,7 +1,7 @@
-import { ChangeEvent, useMemo, useState } from "react";
-import "./ReviewForm.css";
+import { useMemo, useState } from "react";
 import { RatingParameters } from "../../types/RatingParameter";
 import ReviewFormFields from "../ReviewFormFields/ReviewFormFields";
+import "./ReviewForm.css";
 
 type ReviewFormProps = {
   onReview: (rating: number, text: string) => void;
@@ -54,13 +54,21 @@ function ReviewForm({ onReview }: ReviewFormProps) {
     return sum / Object.keys(ratingParameters).length;
   }, [ratingParameters]);
 
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const id = event.target.id;
-    const newValue = parseInt(event.target.value);
-    setRatingParameters({
-      ...ratingParameters,
-      [id]: { ...ratingParameters[id], value: newValue },
-    });
+  const handleChange = (event: Event, value: number | number[]) => {
+    if (
+      event.target !== null &&
+      "name" in event.target &&
+      typeof event.target.name === "string"
+    ) {
+      const id = event.target.name;
+      const newValue = value;
+      console.log(value);
+      if (typeof newValue === "number")
+        setRatingParameters({
+          ...ratingParameters,
+          [id]: { ...ratingParameters[id], value: newValue },
+        });
+    }
   };
 
   const handleClick = () => {
