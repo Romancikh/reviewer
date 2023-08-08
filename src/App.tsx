@@ -1,6 +1,7 @@
-import { v4 as uuid } from "uuid";
+import Container from "@mui/material/Container";
+import Divider from "@mui/material/Divider";
 import { useState } from "react";
-import "./App.css";
+import { v4 as uuid } from "uuid";
 import ReviewContainer from "./components/ReviewContainer/ReviewContainer";
 import ReviewForm from "./components/ReviewForm/ReviewForm";
 import { Review } from "./types/Review";
@@ -22,11 +23,27 @@ function App() {
   };
 
   return (
-    <>
+    <Container
+      maxWidth="xl"
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        margin: "200px auto",
+      }}
+    >
       <ReviewForm onReview={handleReview} />
-      <div className="divisor" />
+      <Divider
+        component="div"
+        sx={{
+          width: "80%",
+          marginTop: "40px",
+          height: "2px",
+          background: "#dcdcdc",
+        }}
+      />
       <ReviewContainer reviews={reviews} />
-    </>
+    </Container>
   );
 }
 
