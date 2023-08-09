@@ -1,4 +1,6 @@
-import "./Review.css";
+import Avatar from "@mui/material/Avatar";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
 
 type ReviewProps = {
   photo: string;
@@ -9,14 +11,31 @@ type ReviewProps = {
 
 function Review({ photo, name, text, rating }: ReviewProps) {
   return (
-    <div className="review">
-      <img src={photo} alt="user" className="review__photo" />
-      <div className="review__content">
-        <span className="review__name">{name}</span>
-        <p className="review__text">{text}</p>
-      </div>
-      <div className="review__rating">{rating}/5</div>
-    </div>
+    <Box display="flex">
+      <Avatar
+        alt="user"
+        src={photo}
+        sx={{
+          width: "50px",
+          height: "50px",
+        }}
+      />
+      <Box
+        display="flex"
+        flexDirection="column"
+        marginLeft={2}
+        marginTop={2}
+        gap={1.25}
+      >
+        <Typography color="#404040">{name}</Typography>
+        <Typography variant="body2" color="#404040" width={451}>
+          {text}
+        </Typography>
+      </Box>
+      <Typography color="#404040" variant="h5" marginLeft={1.25} marginTop={2}>
+        {rating}/5
+      </Typography>
+    </Box>
   );
 }
 

@@ -1,5 +1,6 @@
-import { ChangeEvent, useMemo, useState } from "react";
-import "./ReviewForm.css";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import { useMemo, useState } from "react";
 import { RatingParameters } from "../../types/RatingParameter";
 import ReviewFormFields from "../ReviewFormFields/ReviewFormFields";
 
@@ -54,13 +55,21 @@ function ReviewForm({ onReview }: ReviewFormProps) {
     return sum / Object.keys(ratingParameters).length;
   }, [ratingParameters]);
 
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const id = event.target.id;
-    const newValue = parseInt(event.target.value);
-    setRatingParameters({
-      ...ratingParameters,
-      [id]: { ...ratingParameters[id], value: newValue },
-    });
+  const handleChange = (event: Event, value: number | number[]) => {
+    if (
+      event.target !== null &&
+      "name" in event.target &&
+      typeof event.target.name === "string"
+    ) {
+      const id = event.target.name;
+      const newValue = value;
+      console.log(value);
+      if (typeof newValue === "number")
+        setRatingParameters({
+          ...ratingParameters,
+          [id]: { ...ratingParameters[id], value: newValue },
+        });
+    }
   };
 
   const handleClick = () => {
@@ -69,9 +78,11 @@ function ReviewForm({ onReview }: ReviewFormProps) {
   };
 
   return (
-    <div className="review-form">
-      <h1 className="review-form__title">How nice was my reply?</h1>
-      <div className="review-form__content">
+    <Box width={504} display="flex" flexDirection="column" gap={5}>
+      <Typography variant="h4" component="h1" color="#404040">
+        How nice was my reply?
+      </Typography>
+      <Box display="flex" justifyContent="space-between">
         <ReviewFormFields
           ratingParameters={ratingParameters}
           onChange={handleChange}
@@ -81,9 +92,11 @@ function ReviewForm({ onReview }: ReviewFormProps) {
           }}
           onClick={handleClick}
         />
-        <span className="review-form__rating">{rating}/5</span>
-      </div>
-    </div>
+        <Typography variant="h3" color="#404040">
+          {rating}/5
+        </Typography>
+      </Box>
+    </Box>
   );
 }
 

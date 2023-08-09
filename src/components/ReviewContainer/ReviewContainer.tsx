@@ -1,4 +1,5 @@
-import "./ReviewContainer.css";
+import Stack from "@mui/material/Stack";
+import Typography from "@mui/material/Typography";
 import { Review as TReview } from "../../types/Review";
 import Review from "../Review/Review";
 
@@ -8,7 +9,7 @@ type ReviewContainerProps = {
 
 function ReviewContainer({ reviews }: ReviewContainerProps) {
   return reviews.length ? (
-    <div className="review-container">
+    <Stack gap={5} marginTop={5}>
       {reviews.map((review) => (
         <Review
           key={review.id}
@@ -18,9 +19,11 @@ function ReviewContainer({ reviews }: ReviewContainerProps) {
           rating={review.rating}
         />
       ))}
-    </div>
+    </Stack>
   ) : (
-    <h1 className="review-container review-container_empty">No reviews yet</h1>
+    <Typography variant="h4" color="#404040" marginTop={5}>
+      No reviews yet
+    </Typography>
   );
 }
 
