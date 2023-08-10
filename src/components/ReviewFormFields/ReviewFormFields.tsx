@@ -1,10 +1,9 @@
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import { ChangeEvent } from "react";
+import Button from "tlp-ui-kit/dist/Button/Button";
 import { RatingParameters } from "../../types/RatingParameter";
 import ReviewFormParameters from "../ReviewFormParameters/ReviewFormParameters";
-
 type ReviewFormFieldsProps = {
   ratingParameters: RatingParameters;
   onChange: (
@@ -38,11 +37,7 @@ function ReviewFormFields({
         margin="normal"
         onChange={onTextChange}
       />
-      <Button
-        variant="contained"
-        sx={{ alignSelf: "flex-end" }}
-        onClick={() => onClick()}
-      >
+      <Button variant="contained" onClick={onClick} alignSelf="flex-end">
         Send
       </Button>
     </Box>
