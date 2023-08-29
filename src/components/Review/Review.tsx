@@ -1,6 +1,4 @@
-import Avatar from "@mui/material/Avatar";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
+import { Avatar, Box, Typography } from "tlp-ui-kit";
 
 type ReviewProps = {
   photo: string;
@@ -12,14 +10,7 @@ type ReviewProps = {
 function Review({ photo, name, text, rating }: ReviewProps) {
   return (
     <Box display="flex">
-      <Avatar
-        alt="user"
-        src={photo}
-        sx={{
-          width: "50px",
-          height: "50px",
-        }}
-      />
+      <Avatar alt="user" src={photo} width="50px" height="50px" />
       <Box
         display="flex"
         flexDirection="column"
