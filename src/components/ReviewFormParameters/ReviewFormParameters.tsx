@@ -1,4 +1,4 @@
-import Stack from "@mui/material/Stack";
+import { Stack } from "tlp-ui-kit";
 import { RatingParameters } from "../../types/RatingParameter";
 import Parameter from "../Parameter/Parameter";
 
@@ -16,7 +16,7 @@ function ReviewFormParameters({
   onChange,
 }: ReviewFormParametersProps) {
   return (
-    <Stack gap={4}>
+    <Stack spacing={4}>
       {Object.keys(ratingParameters).map((id) => (
         <Parameter
           key={id}

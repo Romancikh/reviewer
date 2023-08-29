@@ -1,5 +1,4 @@
-import Stack from "@mui/material/Stack";
-import Typography from "@mui/material/Typography";
+import { Stack, Typography } from "tlp-ui-kit";
 import { Review as TReview } from "../../types/Review";
 import Review from "../Review/Review";
 
@@ -9,7 +8,7 @@ type ReviewContainerProps = {
 
 function ReviewContainer({ reviews }: ReviewContainerProps) {
   return reviews.length ? (
-    <Stack gap={5} marginTop={5}>
+    <Stack spacing={5} marginTop={5}>
       {reviews.map((review) => (
         <Review
           key={review.id}

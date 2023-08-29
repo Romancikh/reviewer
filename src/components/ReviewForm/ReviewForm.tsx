@@ -1,6 +1,5 @@
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
 import { useMemo, useState } from "react";
+import { Box, Typography } from "tlp-ui-kit";
 import { RatingParameters } from "../../types/RatingParameter";
 import ReviewFormFields from "../ReviewFormFields/ReviewFormFields";
 
@@ -79,7 +78,7 @@ function ReviewForm({ onReview }: ReviewFormProps) {
 
   return (
     <Box width={504} display="flex" flexDirection="column" gap={5}>
-      <Typography variant="h4" component="h1" color="#404040">
+      <Typography variant="h4" color="#404040">
         How nice was my reply?
       </Typography>
       <Box display="flex" justifyContent="space-between">

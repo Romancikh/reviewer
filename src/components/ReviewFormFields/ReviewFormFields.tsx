@@ -1,7 +1,5 @@
-import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
 import { ChangeEvent } from "react";
-import Button from "tlp-ui-kit/dist/Button/Button";
+import { Box, Button, TextField } from "tlp-ui-kit";
 import { RatingParameters } from "../../types/RatingParameter";
 import ReviewFormParameters from "../ReviewFormParameters/ReviewFormParameters";
 type ReviewFormFieldsProps = {

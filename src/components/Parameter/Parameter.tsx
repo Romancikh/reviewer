@@ -1,6 +1,4 @@
-import Box from "@mui/material/Box";
-import Slider from "@mui/material/Slider";
-import Typography from "@mui/material/Typography";
+import { Box, Slider, Typography } from "tlp-ui-kit";
 
 type ParameterProps = {
   name: string;
@@ -24,9 +22,7 @@ function Parameter({ name, label, value, onChange }: ParameterProps) {
         max={5}
         value={value}
         onChange={onChange}
-        sx={{
-          width: "206px",
-        }}
+        width="206px"
       />
       <Typography color="#404040" fontSize={20}>
         {label}
