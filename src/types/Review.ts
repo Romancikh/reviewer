@@ -1,7 +1,7 @@
 export type Review = {
   id: string;
-  photo: string;
   name: string;
-  text: string;
+  photo: string;
   rating: number;
-}
+  text: string;
+};

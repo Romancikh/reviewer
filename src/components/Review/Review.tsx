@@ -1,30 +1,31 @@
 import { Avatar, Box, Typography } from "tlp-ui-kit";
 
 type ReviewProps = {
-  photo: string;
   name: string;
-  text: string;
+  photo: string;
   rating: number;
+  text: string;
 };
 
-function Review({ photo, name, text, rating }: ReviewProps) {
+function Review({ name, photo, rating, text }: ReviewProps) {
   return (
     <Box display="flex">
-      <Avatar alt="user" src={photo} width="50px" height="50px" />
+      <Avatar alt="user" height="50px" src={photo} width="50px" />
       <Box
         display="flex"
         flexDirection="column"
+        gap={1.25}
         marginLeft={2}
         marginTop={2}
-        gap={1.25}
       >
         <Typography color="#404040">{name}</Typography>
-        <Typography variant="body2" color="#404040" width={451}>
+        <Typography color="#404040" variant="body2" width={451}>
           {text}
         </Typography>
       </Box>
-      <Typography color="#404040" variant="h5" marginLeft={1.25} marginTop={2}>
-        {rating}/5
+      <Typography color="#404040" marginLeft={1.25} marginTop={2} variant="h5">
+        {rating}
+        /5
       </Typography>
     </Box>
   );

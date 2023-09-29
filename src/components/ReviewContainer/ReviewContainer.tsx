@@ -1,4 +1,5 @@
 import { Stack, Typography } from "tlp-ui-kit";
+
 import { Review as TReview } from "../../types/Review";
 import Review from "../Review/Review";
 
@@ -8,19 +9,19 @@ type ReviewContainerProps = {
 
 function ReviewContainer({ reviews }: ReviewContainerProps) {
   return reviews.length ? (
-    <Stack spacing={5} marginTop={5}>
+    <Stack marginTop={5} spacing={5}>
       {reviews.map((review) => (
         <Review
           key={review.id}
-          photo={review.photo}
           name={review.name}
-          text={review.text}
+          photo={review.photo}
           rating={review.rating}
+          text={review.text}
         />
       ))}
     </Stack>
   ) : (
-    <Typography variant="h4" color="#404040" marginTop={5}>
+    <Typography color="#404040" marginTop={5} variant="h4">
       No reviews yet
     </Typography>
   );
