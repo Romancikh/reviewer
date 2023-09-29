@@ -1,27 +1,27 @@
 import { Box, Slider, Typography } from "tlp-ui-kit";
 
 type ParameterProps = {
-  name: string;
   label: string;
-  value: number;
+  name: string;
   onChange: (
     event: Event,
     value: number | number[],
-    activeThumb: number
+    activeThumb: number,
   ) => void;
+  value: number;
 };
 
-function Parameter({ name, label, value, onChange }: ParameterProps) {
+function Parameter({ label, name, onChange, value }: ParameterProps) {
   return (
-    <Box display="flex" gap={2} alignItems="center">
+    <Box alignItems="center" display="flex" gap={2}>
       <Slider
-        name={name}
         marks
-        valueLabelDisplay="auto"
-        min={1}
         max={5}
-        value={value}
+        min={1}
+        name={name}
         onChange={onChange}
+        value={value}
+        valueLabelDisplay="auto"
         width="206px"
       />
       <Typography color="#404040" fontSize={20}>

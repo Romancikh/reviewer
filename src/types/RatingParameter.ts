@@ -5,5 +5,5 @@ export type RatingParameter = {
 };
 
 export type RatingParameters = {
-  [id: string]: RatingParameter
-}
+  [id: string]: RatingParameter;
+};

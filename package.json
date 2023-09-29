@@ -12,6 +12,7 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "tlp-code-style": "github:Romancikh/tlp-code-style",
     "tlp-ui-kit": "github:Romancikh/tlp-ui-kit",
     "uuid": "^9.0.0"
   },

@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { Box, Typography } from "tlp-ui-kit";
+
 import { RatingParameters } from "../../types/RatingParameter";
 import ReviewFormFields from "../ReviewFormFields/ReviewFormFields";
 
@@ -19,9 +20,9 @@ function ReviewForm({ onReview }: ReviewFormProps) {
       label: "Customer Service",
       value: 1,
     },
-    speed: {
-      id: "speed",
-      label: "Speed",
+    facilities: {
+      id: "facilities",
+      label: "Facilities",
       value: 1,
     },
     location: {
@@ -29,9 +30,9 @@ function ReviewForm({ onReview }: ReviewFormProps) {
       label: "Location",
       value: 1,
     },
-    facilities: {
-      id: "facilities",
-      label: "Facilities",
+    speed: {
+      id: "speed",
+      label: "Speed",
       value: 1,
     },
   };
@@ -63,11 +64,14 @@ function ReviewForm({ onReview }: ReviewFormProps) {
       const id = event.target.name;
       const newValue = value;
       console.log(value);
-      if (typeof newValue === "number")
-        setRatingParameters({
-          ...ratingParameters,
-          [id]: { ...ratingParameters[id], value: newValue },
-        });
+      if (typeof newValue === "number") {
+        {
+          setRatingParameters({
+            ...ratingParameters,
+            [id]: { ...ratingParameters[id], value: newValue },
+          });
+        }
+      }
     }
   };
 
@@ -77,22 +81,23 @@ function ReviewForm({ onReview }: ReviewFormProps) {
   };
 
   return (
-    <Box width={504} display="flex" flexDirection="column" gap={5}>
-      <Typography variant="h4" color="#404040">
+    <Box display="flex" flexDirection="column" gap={5} width={504}>
+      <Typography color="#404040" variant="h4">
         How nice was my reply?
       </Typography>
       <Box display="flex" justifyContent="space-between">
         <ReviewFormFields
-          ratingParameters={ratingParameters}
           onChange={handleChange}
-          text={text}
+          onClick={handleClick}
           onTextChange={(event) => {
             setText(event.target.value);
           }}
-          onClick={handleClick}
+          ratingParameters={ratingParameters}
+          text={text}
         />
-        <Typography variant="h3" color="#404040">
-          {rating}/5
+        <Typography color="#404040" variant="h3">
+          {rating}
+          /5
         </Typography>
       </Box>
     </Box>
